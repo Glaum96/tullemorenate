@@ -108,7 +108,7 @@
         <img src="/us.jpeg" alt="Us" class="couple-photo" />
       </div>
 
-      <h1 class="question">Will you be my vællentain, min kjæreste Renate?</h1>
+      <h1 class="question">Vil du være min vællentain, min kjæreste Renate?</h1>
 
       <div class="buttons">
         <button class="yes-btn" on:click={celebrate}>
