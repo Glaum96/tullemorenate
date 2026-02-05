@@ -105,7 +105,7 @@
 
     <div class="content">
       <div class="photo-frame">
-        <img src="/us.jpeg" alt="Us" class="couple-photo" />
+        <img src="us.jpeg" alt="Us" class="couple-photo" />
       </div>
 
       <h1 class="question">Vil du være min vællentain, min kjæreste Renate?</h1>
@@ -119,6 +119,7 @@
           class="no-btn"
           bind:this={noButtonRef}
           on:mouseenter={moveNoButton}
+          on:mousedown={moveNoButton}
         >
           No
         </button>
