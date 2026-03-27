@@ -1,10 +1,23 @@
-:root {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* ============================================
+   GLOBAL CSS — Renates 30-årsdag
+   Dark & Luxurious theme
+   ============================================ */
 
-  color: #ff4d6d;
-  background: linear-gradient(135deg, #fff5f7 0%, #ffe4ec 50%, #ffd6e0 100%);
+:root {
+  --bg-primary:   #0d0d1a;
+  --bg-secondary: #13132a;
+  --bg-card:      #1a1a35;
+  --gold-light:   #e8c97a;
+  --gold:         #c9a84c;
+  --gold-dark:    #8b6914;
+  --text-primary: #f5e6c8;
+  --text-muted:   #b8a07a;
+  --error:        #e05555;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body:    'Cormorant Garamond', Georgia, serif;
+
+  --transition:   all 0.4s ease;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -12,14 +25,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-* {
+*, *::before, *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.7;
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
@@ -28,4 +49,23 @@ body {
 #app {
   width: 100%;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--gold-light);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  outline: none;
 }
