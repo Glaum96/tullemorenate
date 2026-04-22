@@ -1,29 +1,86 @@
-<script>
-  import PasswordPage from './lib/PasswordPage.svelte';
-  import IntroSection from './lib/IntroSection.svelte';
-  import MainContent from './lib/MainContent.svelte';
-  import MusicToggle from './lib/MusicToggle.svelte';
+<div class="container">
+  <div class="content">
+    <h1>Noe er på vei</h1>
+    <p>Følg med</p>
+    <div class="dots">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
 
-  // 'password' → 'intro' → 'main'
-  let appState = $state('password');
-
-  function handleUnlock() {
-    appState = 'intro';
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
   }
 
-  function handleIntroDone() {
-    appState = 'main';
+  .content {
+    text-align: center;
   }
-</script>
 
-{#if appState === 'password'}
-  <PasswordPage onUnlock={handleUnlock} />
-{:else if appState === 'intro'}
-  <IntroSection onDone={handleIntroDone} />
-{:else}
-  <MainContent />
-{/if}
+  h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+  }
 
-{#if appState !== 'password'}
-  <MusicToggle />
-{/if}
+  p {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 3vw, 1.75rem);
+    color: var(--gold-light);
+    margin-bottom: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+
+  .dots {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+
+  .dots span {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--gold);
+    border-radius: 50%;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+
+  .dots span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .dots span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+</style>
